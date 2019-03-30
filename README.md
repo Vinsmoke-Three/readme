@@ -35,7 +35,7 @@
   `db2 set constraints for tabname`  
 * 解除一个表的挂起状态  
   `db2 reorg table  tabname`  
-* 检查表是否需要reorg
+* 检查表是否需要reorg  
   `REORGCHK CURRENT STATISTICS ON TABLE table_name`  
 * 列出表空间  
   `db2 list tablespaces show detail`  
