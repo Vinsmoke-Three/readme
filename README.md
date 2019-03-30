@@ -27,7 +27,8 @@
 * 确认表的状态  
   `db2 load query table tr_tname`
 * 检查表的状态  
-  `Select TABSCHEMA, TABNAME, LOAD_STATUS from SYSIBMADM.ADMINTABINFO where load_status = 'PENDING' and tabschema = '<schema_name>'"`  
+  ```Select TABSCHEMA, TABNAME, LOAD_STATUS from SYSIBMADM.ADMINTABINFO 
+  where load_status = 'PENDING' and tabschema = '<schema_name>'"```
 * 解除一个表的check pendding状态  
   `db2 set constraints for tabname`  
 * 解除一个表的挂起状态  
