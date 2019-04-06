@@ -46,4 +46,29 @@
 * 查看文件创建时间   
   `ll -u`
 * 查看文件大小  
-  `ll -h`
+  `ll -h`  
+
+### shell命令  
+ ```
+DATESTR=`date +%Y%m%d`
+TMPFILENAME='bounce550_tmp'$DATESTR'.txt'
+#FILENAME1、FILENAME2はsendmagicの場合のみ
+FILENAME1='bounce550_'$DATESTR'_1.csv'
+FILENAME2='bounce550_'$DATESTR'_2.csv'
+FILENAME='bounce550_'$DATESTR'.csv'
+FORMAT=',tmp_addr@example.com'
+## LOGからテキストに吐き出す
+​
+#grepでor関係の条件：grep -e '条件1' -e '条件2' 
+find /usr/local/sendmagic/log/sm_unknown.log-$DATESTR -type f -print | xargs grep -e 'faild 42550' -e 'faild 42559' > /usr/local/batch/bin/$TMPFILENAME
+cat /usr/local/batch/bin/$TMPFILENAME | awk -F"first" '{print $2}' | awk -F"end" '{print $1}' | sort -u | sed -e "s/\$/$FORMAT/" > /usr/local/batch/bin/$FILENAME1
+cat /usr/local/batch/bin/$TMPFILENAME | awk -F"hello" '{print $2}' | awk -F"end" '{print $1}' | sort -u | sed -e "s/\$/$FORMAT/" > /usr/local/batch/bin/$FILENAME2
+#重複している行を削除する
+cat /usr/local/batch/bin/$FILENAME1 /usr/local/batch/bin/$FILENAME2 |  sort | uniq > /usr/local/batch/bin/$FILENAME
+​
+## 転送済みファイルを削除
+rm $TMPFILENAME
+rm $FILENAME1
+rm $FILENAME2
+rm $FILENAME
+ ```
