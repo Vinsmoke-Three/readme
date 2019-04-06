@@ -41,3 +41,8 @@
   `db2 list tablespaces show detail`  
 * 列出命令选项  
   `db2 list command options`
+### linux命令
+* 查看文件创建时间   
+  `ll -u`
+* 查看文件大小  
+  `ll -h`
