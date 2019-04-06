@@ -50,6 +50,7 @@
 
 ### shell 命令  
  ```
+#date:20190101
 DATESTR=`date +%Y%m%d`
 TMPFILENAME='bounce550_tmp'$DATESTR'.txt'
 #FILENAME1、FILENAME2はsendmagicの場合のみ
