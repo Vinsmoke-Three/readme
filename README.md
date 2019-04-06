@@ -42,13 +42,13 @@
 * 列出命令选项  
   `db2 list command options`  
 
-### linux命令
+### linux 命令
 * 查看文件创建时间   
   `ll -u`
 * 查看文件大小  
   `ll -h`  
 
-### shell命令  
+### shell 命令  
  ```
 DATESTR=`date +%Y%m%d`
 TMPFILENAME='bounce550_tmp'$DATESTR'.txt'
