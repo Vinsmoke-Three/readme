@@ -47,6 +47,12 @@
   `ll -u`
 * 查看文件大小  
   `ll -h`  
+* 查看文件内容(-N 显示行数)  
+  `less -N test.txt`  
+* 动态查看日志信息  
+  `tail -f SystemOut.log`  
+* 查找命令(less + grep)  
+  `less test.txt | grep '关键字'`  
 
 ### shell 命令  
  ```
