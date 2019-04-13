@@ -1,7 +1,5 @@
 # vinsmoke-wiki  
 
-##
-
 ### DB2 命令  
 * 查看执行计划 db2expln  
   ```
