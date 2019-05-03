@@ -82,4 +82,9 @@ rm $TMPFILENAME
 rm $FILENAME1
 rm $FILENAME2
 rm $FILENAME
- ```
+ ```   
+### webserver  
+* rewrite  
+  rewrite.conf更新完后执行下面的命令行（文法检查：Syntax OK）  
+  `../bin/apachectl -t`  
+  重启服务：`../bin/apachectl graceful`  
