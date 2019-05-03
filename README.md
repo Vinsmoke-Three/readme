@@ -55,6 +55,8 @@
   `tail -f SystemOut.log`  
 * 查找命令(less + grep)  
   `less test.txt | grep '关键字'`  
+* 创建文件（touch）  
+  `touch test.txt`
 
 ### shell 命令  
  ```
